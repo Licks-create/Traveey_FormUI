@@ -4,12 +4,12 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
   return (
     <main className="personal-info w-3/4 mx-auto bg-white  text-black">
         <section className="header p-5">
-                <h2 className="heading">
+                <h1 className="text-xl">
                     Personal info
-                </h2>
-                <h4>
+                </h1>
+                <div className='text-neutral-400 text-sm'>
                     Please provide your name, email address and phone number.
-                </h4>
+                </div>
         </section>
         <section className='personal-data'>
             <form action="">

@@ -10,7 +10,7 @@ const App:React.FC=():React.JSX.Element=> {
  
 
   return (
-    <div className='bg-green-100  font-medium text-sky-500 dark:text-sky-400 h-screen '> 
+    <div className='bg-green-100 flex items-center justify-items-center font-medium text-sky-500 dark:text-sky-400 h-screen '> 
     
           <Routes>
               <Route path='/' element={<Home/>} >
