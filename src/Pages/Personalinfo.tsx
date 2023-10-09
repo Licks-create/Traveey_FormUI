@@ -15,17 +15,17 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
             <form action="">
                 <div className="name p-4">
                     <label htmlFor="name" className='block'>Name</label>
-                <input className='mt-2'  id='name' type="text" />
+                <input className='mt-2 w-full h-10 rounded-lg pl-2 outline-none border-none shadow-lg'  id='name' type="text" />
                 </div>
 
                 <div className="email p-4">
                     <label htmlFor="email" className='block' >Email</label>
-                    <input type="email" className='mt-2' id='email'/>
+                    <input type="email" className='mt-2 w-full h-10 rounded-lg pl-2 outline-none border-none shadow-lg' id='email'/>
                 </div>
 
                 <div className="number p-4">
                     <label htmlFor="number" className='block' >Phone number</label>
-                    <input type="number" className='mt-2' id='number' />
+                    <input type="number" className='mt-2 w-full h-10 rounded-lg pl-2 outline-none border-none shadow-lg' id='number' />
                 </div>
             </form>
         </section>

@@ -3,7 +3,7 @@ import {Link,Outlet} from "react-router-dom"
 import img1 from "../assets/assets/images/bg-sidebar-desktop.svg"
 const Home = () => {
   return (
-    <div className='grid w-3/5 h-3/5 mx-auto  bg-white p-2 rounded-xl' style={{gridTemplateColumns:"25% 70%"}}>
+    <div className='grid w-2/4 h-3/5 mx-auto  bg-white p-3 rounded-xl' style={{gridTemplateColumns:"30% 70%"}}>
 
     <div className='flex flex-col justify-start  items-baseline  rounded-xl' style={{background:`url(${img1}) no-repeat center center/cover `}}>
      
