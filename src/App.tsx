@@ -6,6 +6,7 @@ import Personalinfo from './Pages/Personalinfo'
 import SelectPlan from './Pages/SelectPlan'
 import AddsOn from './Pages/AddsOn'
 import Summary from './Pages/Summary'
+import Confirm from "./Pages/Confirm"
 const App:React.FC=():React.JSX.Element=> {
  
 
@@ -18,6 +19,7 @@ const App:React.FC=():React.JSX.Element=> {
                 <Route path='/select-plan' element={<SelectPlan/>}/>
                 <Route path='/adds-on' element={<AddsOn/>}/>
                 <Route path='/summary' element={<Summary/>}/>
+                <Route path='/confirm' element={<Confirm/>}/>
               </Route>
           </Routes>
       

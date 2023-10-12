@@ -29,7 +29,7 @@ const Home = () => {
       </div>
 
 
-      <div  className='mx-12 text-start my-0 text-white p-2 rounded-xl relative hover: span group cursor-pointer'>
+      <div  className='mx-12 text-start my-0 text-white p-2 rounded-xl relative  span group cursor-pointer'>
         <span className='transition border-2 group-hover:bg-green-100 group-hover:text-black border-white absolute rounded-full w-9 h-3/5 flex items-center justify-center top-3 serial-no'    style={{left:"-35px"}} id='2s'>2</span>
         <h6 className='text-xs text-neutral-300' style={{fontSize:"10px"}}>STEP 2</h6>
         <Link to={"/select-plan"}className='text-xs' onClick={(e)=>showcolor(e,'2s')} >SELECT PLAN</Link>

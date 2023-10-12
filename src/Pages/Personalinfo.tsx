@@ -42,6 +42,11 @@ const validate = (values:userInfo):userInfo => {
   
 const Personalinfo:React.FC = ():React.JSX.Element => {
     useEffect(()=>{
+        const allSerials=window.document.querySelectorAll('.serial-no');
+  Array.from(allSerials).map((ele:Element):void=>{
+    ele.classList.remove('bg-green-100')
+    ele.classList.remove('text-black')
+  })
         window.document.getElementById('1s')?.classList.add('bg-green-100')
         window.document.getElementById('1s')?.classList.add('text-black')
       },[])
@@ -57,7 +62,9 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
     })
     console.log(formik.errors)
   return (
-    <main className="personal-info w-3/4 mx-auto bg-white  text-black">
+    <main className="personal-info w-3/4 mx-auto bg-white  text-black relative"
+    
+    >
         <section className="header py-5">
                 <h1 className="text-3xl text-start">
                     Personal info
@@ -66,9 +73,13 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
                     Please provide your name, email address and phone number.
                 </div>
         </section>
-        <section className='personal-data'>
-            <form action="#" onSubmit={formik.handleSubmit}>
-                <div className="name p-4">
+        <section className='personal-data'
+        >
+            <form action="#" onSubmit={formik.handleSubmit}
+        style={{height:"40vh"}}
+            className=''
+            >
+                <div className="name px-4  my-4">
                     <label htmlFor="name" className='inline-block'>Name</label>{formik.errors.name?<span className='text-xs px-3 text-red-400'>{formik.errors.name}</span>:null}
                 <input
                 //  {...formik.getFieldProps('name')}  
@@ -78,7 +89,7 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
                 
                 </div>
 
-                <div className="email p-4">
+                <div className="email px-4 my-4">
                     <label htmlFor="email" className='inline-block' >Email</label>{formik.errors.email?<span className='text-xs px-3 text-red-400'>{formik.errors.email}</span>:null}
                     <input 
                     onChange={formik.handleChange}
@@ -87,7 +98,7 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
                      type="email" className='mt-2 w-full h-10 rounded-lg pl-2 outline-none border-none shadow-lg' id='email' placeholder='e.g abc123@gmail.com' name='email'/>
                 </div>
                 
-                <div className="number p-4">
+                <div className="number px-4 my-4">
                     <label htmlFor="number" className='inline-block' >Phone number</label>{formik.errors.number?<span className='text-xs px-3 text-red-400'>{formik.errors.number}</span>:null}
                     <input 
                     //  {...formik.getFieldProps('number')} 
@@ -96,7 +107,7 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
                     type="number" className='mt-2 w-full h-10 rounded-lg pl-2 outline-none border-none shadow-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none' id='number' placeholder='e.g +91 9118372331' name='number' />
                 </div>
 
-                <div className="button-next-step cursor-pointer flex justify-end">
+                <div className="button-next-step cursor-pointer flex justify-end  absolute bottom-0 left-0 w-full ">
                     <button type='button' onClick={(e)=>{navigate('/select-plan'); showcolor(e,'2s')}} className='bg-blue-800 text-white p-3 rounded-md' >Next Step</button>
                 </div>
             </form>
