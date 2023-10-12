@@ -1,9 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react'
-import {useNavigate} from "react-router-dom"
+import React,{useEffect} from 'react'
+import {NavigateFunction, useNavigate} from "react-router-dom"
+import { showcolor } from './Home';
 import { useFormik } from 'formik'
-type userInfo={name?:string,
-    email?:string,number?:string};
+type userInfo={
+    name?:string,
+    email?:string,
+    number?:string
+};
 
 
 const initialValues:userInfo={
@@ -12,14 +16,15 @@ const initialValues:userInfo={
     number:''
 }
 
-const validate = (values:userInfo) => {
+
+const validate = (values:userInfo):userInfo => {
     const errors:userInfo = {};
     console.log(values)
     if(!values.name){
         errors.name="Required*"
         return errors
     }
-    if (!values.email) {
+    else  if (!values.email) {
       errors.email = 'Required*';
       return errors
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -27,7 +32,7 @@ const validate = (values:userInfo) => {
 
       return errors
     }
-    if(!values.number)
+    else  if(!values.number)
     {
         errors.number="Required*"
     }
@@ -36,7 +41,11 @@ const validate = (values:userInfo) => {
   };
   
 const Personalinfo:React.FC = ():React.JSX.Element => {
-    const navigate=useNavigate();
+    useEffect(()=>{
+        window.document.getElementById('1s')?.classList.add('bg-green-100')
+        window.document.getElementById('1s')?.classList.add('text-black')
+      },[])
+    const navigate:NavigateFunction=useNavigate();
     const formik=useFormik({
         initialValues,
         validate,
@@ -49,7 +58,7 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
     console.log(formik.errors)
   return (
     <main className="personal-info w-3/4 mx-auto bg-white  text-black">
-        <section className="header p-5">
+        <section className="header py-5">
                 <h1 className="text-3xl text-start">
                     Personal info
                 </h1>
@@ -88,7 +97,7 @@ const Personalinfo:React.FC = ():React.JSX.Element => {
                 </div>
 
                 <div className="button-next-step cursor-pointer flex justify-end">
-                    <button type='button' onClick={()=>{navigate('/select-plan')}} className='bg-blue-800 text-white p-3 rounded-md'>Next Step</button>
+                    <button type='button' onClick={(e)=>{navigate('/select-plan'); showcolor(e,'2s')}} className='bg-blue-800 text-white p-3 rounded-md' >Next Step</button>
                 </div>
             </form>
         </section>

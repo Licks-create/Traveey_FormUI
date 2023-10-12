@@ -1,13 +1,21 @@
-import React from 'react'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useEffect } from 'react'
+import {Link, NavigateFunction, useNavigate } from 'react-router-dom'
+import { showcolor } from './Home'
 
 const Summary = () => {
+    const navigate:NavigateFunction=useNavigate()
+    useEffect(()=>{
+        window.document.getElementById('4s')?.classList.add('bg-green-100')
+        window.document.getElementById('4s')?.classList.add('text-black')
+      },[])
   return (
     <main className="personal-info w-3/4 mx-auto bg-white  text-black">
         <section className="header p-5">
-                <h2 className="heading">
-                    Personal info
+                <h2 className="text-3xl text-start">
+                    Finishing-Up
                 </h2>
-                <h4>
+                <h4 className='text-neutral-400 text-sm'>
                     Please provide your name, email address and phone number.
                 </h4>
         </section>
@@ -26,6 +34,10 @@ const Summary = () => {
                 <div className="number p-4">
                     <label htmlFor="number" className='block' >Phone number</label>
                     <input type="number" className='mt-2' id='number' />
+                </div>
+                <div className="button-next-step cursor-pointer flex justify-between">
+                    <button type='button' onClick={(e)=>{navigate('/adds-on'); showcolor(e,'3s')}} className='bg-blue-800 text-white p-3 rounded-md '>Go Back</button>
+                    <button type='button' onClick={(e)=>{navigate('/select-plan')}} className='bg-blue-400 text-white p-3 rounded-md cursor-not-allowed' >Confirm</button>
                 </div>
             </form>
         </section>
